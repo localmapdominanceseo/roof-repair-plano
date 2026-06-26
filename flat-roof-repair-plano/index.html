@@ -42,10 +42,33 @@
     <a href="/" class="logo">Roof Repair Plano Texas<span>Trusted Local Roofing Contractors</span></a>
     <nav id="main-nav">
       <a href="/">Home</a>
-      <a href="/roof-repair-plano/">Roof Repair</a>
-      <a href="/roof-replacement-plano-tx/">Replacement</a>
-      <a href="/emergency-roof-repair-plano-tx/">Emergency</a>
+      <div class="nav-item">
+        <a href="/roof-repair-plano/">Services</a>
+        <div class="dropdown">
+          <span class="dropdown-section">Repair Services</span>
+          <a href="/roof-repair-plano/">Roof Repair Plano TX</a>
+          <a href="/roof-replacement-plano-tx/">Roof Replacement</a>
+          <a href="/emergency-roof-repair-plano-tx/">Emergency Roof Repair</a>
+          <a href="/storm-damage-roof-repair-plano/">Storm Damage Repair</a>
+          <a href="/hail-damage-roof-repair-plano/">Hail Damage Repair</a>
+          <a href="/roof-inspection-plano-tx/">Free Roof Inspection</a>
+          <a href="/insurance-claim-roof-repair-plano/">Insurance Claims</a>
+          <a href="/flat-roof-repair-plano/">Flat Roof Repair</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/roof-repair-plano/">Locations</a>
+        <div class="dropdown">
+          <span class="dropdown-section">Service Areas</span>
+          <a href="/roof-repair-plano/">Plano TX</a>
+          <a href="/roof-repair-frisco-tx/">Frisco TX</a>
+          <a href="/roof-repair-allen-tx/">Allen TX</a>
+          <a href="/roof-repair-mckinney-tx/">McKinney TX</a>
+          <a href="/roof-repair-richardson-tx/">Richardson TX</a>
+        </div>
+      </div>
       <a href="/about/">About</a>
+      <a href="/projects/">Projects</a>
       <a href="/contacts/">Contact</a>
       <a href="/contacts/" class="btn-nav">Free Inspection</a>
     </nav>
@@ -203,7 +226,27 @@
 <script>
 function toggleNav(){
   var n=document.getElementById('main-nav');
-  n.style.display=n.style.display==='flex'?'none':'flex';
-  if(n.style.display==='flex')n.style.cssText='display:flex;flex-direction:column;position:fixed;top:70px;left:0;right:0;background:#fff;border-bottom:2px solid #2e7d32;padding:16px 20px;gap:4px;z-index:999;box-shadow:0 8px 20px rgba(0,0,0,.1)';
+  var open=n.style.display==='flex';
+  n.style.display=open?'none':'flex';
+  if(!open)n.style.cssText='display:flex;flex-direction:column;position:fixed;top:70px;left:0;right:0;background:#fff;border-bottom:2px solid #2e7d32;padding:16px 20px;gap:0;z-index:999;box-shadow:0 8px 20px rgba(0,0,0,.1)';
 }
+// Mobile: make dropdowns tappable
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.nav-item>a').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(window.innerWidth<=900){
+        e.preventDefault();
+        var dd=this.nextElementSibling;
+        if(dd&&dd.classList.contains('dropdown')){
+          dd.style.display=dd.style.display==='block'?'none':'block';
+          dd.style.position='static';
+          dd.style.boxShadow='none';
+          dd.style.border='none';
+          dd.style.borderLeft='3px solid #2e7d32';
+          dd.style.marginLeft='12px';
+        }
+      }
+    });
+  });
+});
 </script></body></html>

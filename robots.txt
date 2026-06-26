@@ -1,0 +1,44 @@
+# robots.txt — roofrepairplanotexas.com
+# Updated: 2026-06-26
+
+# Allow all compliant crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://roofrepairplanotexas.com/sitemap.xml
+
+# Block AI training crawlers that don't respect llms.txt
+# (keeps content available to answer-generation bots but not bulk scrapers)
+User-agent: CCBot
+Disallow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: SemrushBot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: MJ12bot
+Disallow: /
