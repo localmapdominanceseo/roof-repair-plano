@@ -241,41 +241,73 @@ footer .inner{max-width:var(--max);margin:0 auto;padding:0 20px}
 
 /* RESPONSIVE */
 @media(max-width:900px){
+  /* NAV */
   #main-nav{display:none!important}
   #main-nav.open{display:flex!important;flex-direction:column;position:fixed;top:66px;left:0;right:0;background:#fff;border-bottom:2px solid #2e7d32;padding:12px 16px;gap:0;z-index:999;box-shadow:0 8px 20px rgba(0,0,0,.1);max-height:calc(100vh - 66px);overflow-y:auto}
-  #main-nav.open a{padding:10px 12px;border-bottom:.5px solid #f0f0f0;font-size:15px;display:block}
+  #main-nav.open a{padding:10px 12px;border-bottom:.5px solid #f0f0f0;font-size:15px;display:block;white-space:normal}
   #main-nav.open .btn-header{margin-top:8px;border-radius:4px!important;text-align:center;display:block}
   #main-nav.open .nav-item{width:100%}
   #main-nav.open .dropdown{display:none;position:static!important;box-shadow:none!important;border:none!important;border-left:3px solid #2e7d32!important;margin:0 0 0 12px!important}
   #main-nav.open .dropdown.open{display:block!important}
   .hamburger{display:flex!important}
-  .hero{min-height:auto;padding:20px 0}
-  .hero .inner{padding:40px 20px}
+  /* TOPBAR */
+  .topbar .inner{flex-direction:column;align-items:flex-start;gap:4px;padding:8px 16px}
+  .topbar-left{gap:12px}
+  .topbar-right{display:none}
+  /* HERO */
+  .hero{min-height:auto}
+  .hero .inner{padding:40px 16px}
+  .hero-content{max-width:100%}
+  .hero-btns{flex-direction:column;gap:10px}
+  .hero-btns a{width:100%;justify-content:center;text-align:center}
+  /* ABOUT */
   .about-panel .inner{grid-template-columns:1fr}
+  .about-img{display:none}
+  .about-content{padding:32px 20px}
+  /* TRUST */
   .trust-grid{grid-template-columns:1fr}
   .trust-card{border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}
   .trust-card:last-child{border-bottom:none}
+  /* WHO WE ARE */
   .who-we-are .inner{grid-template-columns:1fr;gap:32px}
+  .who-images img:last-child{display:none}
+  .hours-phone{grid-template-columns:1fr}
+  .hours-item{border-right:none;border-bottom:1px solid rgba(120,130,111,.3)}
+  .hours-item:last-child{border-bottom:none}
+  /* SERVICES */
   .service-areas .inner{grid-template-columns:1fr}
   .services-grid{grid-template-columns:1fr}
   .services-checklist{grid-template-columns:1fr 1fr}
+  /* SECTIONS */
   .trusted .inner{grid-template-columns:1fr;gap:24px}
   .need-repair-box{grid-template-columns:1fr}
   .need-repair-img{display:none}
   .bottom-banner .inner{grid-template-columns:1fr}
+  /* FOOTER */
   .footer-top{grid-template-columns:1fr 1fr;gap:24px}
+  /* MISC */
   .sticky-call{display:block}
   body{padding-bottom:60px}
-  .who-we-are{padding:60px 0 40px}
+  .who-we-are{padding:48px 0 32px}
+  .trust-cards .inner{padding:0 16px}
+  .trust-grid{margin:-30px 0 0}
 }
 @media(max-width:600px){
-  .hero h1{font-size:26px}
+  /* HERO */
+  .hero h1{font-size:24px;line-height:1.2}
+  .hero-sub{font-size:14px}
+  .hero-storm{font-size:13px}
+  .hero-btns a{font-size:14px;padding:12px 20px}
+  /* TOPBAR */
+  .topbar-left{flex-direction:column;align-items:flex-start;gap:6px}
+  /* SERVICES */
   .services-checklist{grid-template-columns:1fr}
+  /* FOOTER */
   .footer-top{grid-template-columns:1fr}
-  .topbar-left{gap:12px}
-  .hours-phone{grid-template-columns:1fr;gap:0}
-  .hours-item{border-right:none;border-bottom:1px solid rgba(120,130,111,0.4)}
-  .hours-item:last-child{border-bottom:none;padding-left:0}
+  /* MISC */
+  .section-title{font-size:22px}
+  .about-content h2{font-size:18px}
+  .form-box{padding:24px 16px}
 }
 </style>
 
