@@ -209,11 +209,8 @@
 <script>
 function toggleNav(){
   var n=document.getElementById('main-nav');
-  var open=n.style.display==='flex';
-  n.style.display=open?'none':'flex';
-  if(!open)n.style.cssText='display:flex;flex-direction:column;position:fixed;top:70px;left:0;right:0;background:#fff;border-bottom:2px solid #2e7d32;padding:16px 20px;gap:0;z-index:999;box-shadow:0 8px 20px rgba(0,0,0,.1)';
+  n.classList.toggle('open');
 }
-// Mobile: make dropdowns tappable
 document.addEventListener('DOMContentLoaded',function(){
   document.querySelectorAll('.nav-item>a').forEach(function(a){
     a.addEventListener('click',function(e){
@@ -221,12 +218,7 @@ document.addEventListener('DOMContentLoaded',function(){
         e.preventDefault();
         var dd=this.nextElementSibling;
         if(dd&&dd.classList.contains('dropdown')){
-          dd.style.display=dd.style.display==='block'?'none':'block';
-          dd.style.position='static';
-          dd.style.boxShadow='none';
-          dd.style.border='none';
-          dd.style.borderLeft='3px solid #2e7d32';
-          dd.style.marginLeft='12px';
+          dd.classList.toggle('open');
         }
       }
     });

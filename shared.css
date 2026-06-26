@@ -119,17 +119,34 @@ footer{background:var(--dark);padding:48px 0 24px}
 .sticky-call a{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px;color:#fff;text-decoration:none;font-size:17px;font-weight:700}
 .sticky-call svg{width:20px;height:20px;fill:white}
 @media(max-width:900px){
-  nav{display:none}.hamburger{display:flex}
+  /* NAV — hide by default, show when .open class added by JS */
+  #main-nav{display:none!important}
+  #main-nav.open{display:flex!important;flex-direction:column;position:fixed;top:66px;left:0;right:0;background:#fff;border-bottom:2px solid #2e7d32;padding:12px 16px;gap:0;z-index:999;box-shadow:0 8px 20px rgba(0,0,0,.1);max-height:calc(100vh - 66px);overflow-y:auto}
+  #main-nav.open a{padding:10px 12px;border-bottom:.5px solid #f0f0f0;font-size:15px}
+  #main-nav.open .btn-nav{margin-top:8px;border-radius:4px;text-align:center;justify-content:center}
+  .hamburger{display:flex}
+  /* DROPDOWN on mobile */
+  #main-nav.open .nav-item{width:100%}
+  #main-nav.open .nav-item>a{width:100%;justify-content:space-between}
+  #main-nav.open .dropdown{display:none;position:static!important;box-shadow:none!important;border:none!important;border-left:3px solid #2e7d32!important;margin:0 0 0 12px!important;min-width:auto;border-radius:0!important}
+  #main-nav.open .dropdown.open{display:block!important}
+  #main-nav.open .dropdown a{padding:8px 16px;font-size:14px;border-bottom:.5px solid #f5f5f5}
+  /* TRUST BAR */
   .trust-bar .wrap{grid-template-columns:1fr 1fr}
+  /* LAYOUT */
   .two-col{grid-template-columns:1fr;gap:32px}
   .process-grid{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
   .cta-banner .wrap{flex-direction:column;align-items:flex-start}
   .sticky-call{display:block}
   body{padding-bottom:60px}
+  .content-body h2{font-size:20px}
+  .content-body h3{font-size:16px}
+  .section{padding:48px 0}
 }
 @media(max-width:600px){
   .trust-bar .wrap{grid-template-columns:1fr}
   .process-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
+  .content-body h2{font-size:18px}
 }

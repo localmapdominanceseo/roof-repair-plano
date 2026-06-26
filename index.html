@@ -241,8 +241,14 @@ footer .inner{max-width:var(--max);margin:0 auto;padding:0 20px}
 
 /* RESPONSIVE */
 @media(max-width:900px){
-  nav{display:none}
-  .hamburger{display:flex}
+  #main-nav{display:none!important}
+  #main-nav.open{display:flex!important;flex-direction:column;position:fixed;top:66px;left:0;right:0;background:#fff;border-bottom:2px solid #2e7d32;padding:12px 16px;gap:0;z-index:999;box-shadow:0 8px 20px rgba(0,0,0,.1);max-height:calc(100vh - 66px);overflow-y:auto}
+  #main-nav.open a{padding:10px 12px;border-bottom:.5px solid #f0f0f0;font-size:15px;display:block}
+  #main-nav.open .btn-header{margin-top:8px;border-radius:4px!important;text-align:center;display:block}
+  #main-nav.open .nav-item{width:100%}
+  #main-nav.open .dropdown{display:none;position:static!important;box-shadow:none!important;border:none!important;border-left:3px solid #2e7d32!important;margin:0 0 0 12px!important}
+  #main-nav.open .dropdown.open{display:block!important}
+  .hamburger{display:flex!important}
   .hero{min-height:auto;padding:20px 0}
   .hero .inner{padding:40px 20px}
   .about-panel .inner{grid-template-columns:1fr}
@@ -744,13 +750,22 @@ footer .inner{max-width:var(--max);margin:0 auto;padding:0 20px}
 
 <script>
 function toggleNav(){
-  var nav=document.getElementById('main-nav');
-  if(nav.style.display==='flex'){
-    nav.style.display='none';
-  } else {
-    nav.style.cssText='display:flex;flex-direction:column;position:fixed;top:70px;left:0;right:0;background:#fff;border-bottom:2px solid #2e7d32;padding:16px 20px;gap:4px;z-index:999;box-shadow:0 8px 20px rgba(0,0,0,.1)';
-  }
+  var n=document.getElementById('main-nav');
+  n.classList.toggle('open');
 }
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.nav-item>a').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(window.innerWidth<=900){
+        e.preventDefault();
+        var dd=this.nextElementSibling;
+        if(dd&&dd.classList.contains('dropdown')){
+          dd.classList.toggle('open');
+        }
+      }
+    });
+  });
+});
 </script>
 
 </body>
