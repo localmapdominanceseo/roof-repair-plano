@@ -259,26 +259,29 @@ footer .inner{max-width:var(--max);margin:0 auto;padding:0 20px}
   .hero .inner{padding:40px 16px}
   .hero-content{max-width:100%}
   .hero-btns{flex-direction:column;gap:10px}
-  .hero-btns a{width:100%;justify-content:center;text-align:center}
+  .hero-btns a{width:100%;justify-content:center;text-align:center;box-sizing:border-box}
   /* ABOUT */
   .about-panel .inner{grid-template-columns:1fr}
   .about-img{display:none}
   .about-content{padding:32px 20px}
   /* TRUST */
-  .trust-grid{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:1fr!important}
   .trust-card{border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}
   .trust-card:last-child{border-bottom:none}
+  .trust-grid{margin:0!important}
   /* WHO WE ARE */
   .who-we-are .inner{grid-template-columns:1fr;gap:32px}
   .who-images img:last-child{display:none}
   .hours-phone{grid-template-columns:1fr}
   .hours-item{border-right:none;border-bottom:1px solid rgba(120,130,111,.3)}
   .hours-item:last-child{border-bottom:none}
+  /* AREAS + FORM */
+  .areas-form-grid{grid-template-columns:1fr!important}
   /* SERVICES */
   .service-areas .inner{grid-template-columns:1fr}
-  .services-grid{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr!important}
   .services-checklist{grid-template-columns:1fr 1fr}
-  /* SECTIONS */
+  /* TRUSTED/CTA SECTIONS */
   .trusted .inner{grid-template-columns:1fr;gap:24px}
   .need-repair-box{grid-template-columns:1fr}
   .need-repair-img{display:none}
@@ -290,24 +293,28 @@ footer .inner{max-width:var(--max);margin:0 auto;padding:0 20px}
   body{padding-bottom:60px}
   .who-we-are{padding:48px 0 32px}
   .trust-cards .inner{padding:0 16px}
-  .trust-grid{margin:-30px 0 0}
 }
 @media(max-width:600px){
   /* HERO */
-  .hero h1{font-size:24px;line-height:1.2}
-  .hero-sub{font-size:14px}
-  .hero-storm{font-size:13px}
-  .hero-btns a{font-size:14px;padding:12px 20px}
-  /* TOPBAR */
-  .topbar-left{flex-direction:column;align-items:flex-start;gap:6px}
+  .hero h1{font-size:22px;line-height:1.2}
+  .hero-sub{font-size:13px}
+  .hero-storm{font-size:12px;padding:8px 12px}
+  .hero-btns a{font-size:14px;padding:12px 16px}
+  .hero .inner{padding:32px 16px}
+  /* TOPBAR — show only phone */
+  .topbar-left a:nth-child(2){display:none}
+  .topbar-right{display:none}
   /* SERVICES */
   .services-checklist{grid-template-columns:1fr}
   /* FOOTER */
   .footer-top{grid-template-columns:1fr}
+  /* FORM */
+  .form-box{padding:20px 16px}
+  .form-box h2{font-size:18px}
   /* MISC */
-  .section-title{font-size:22px}
+  .section-title{font-size:20px}
   .about-content h2{font-size:18px}
-  .form-box{padding:24px 16px}
+  .about-content{padding:24px 16px}
 }
 </style>
 
@@ -542,7 +549,7 @@ footer .inner{max-width:var(--max);margin:0 auto;padding:0 20px}
 
 <!-- SERVICE AREAS + FORM -->
 <section style="background:#fff;padding:60px 0">
-  <div style="max-width:var(--max);margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
+  <div class="areas-form-grid" style="max-width:var(--max);margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
     <div>
       <h2 style="font-size:26px;font-weight:800;color:var(--text);margin-bottom:12px">Roof Repair Services Across Plano &amp; Collin County</h2>
       <p style="font-size:14px;color:var(--muted);margin-bottom:16px">We work across all Plano zip codes and surrounding cities. If you're in Collin County, we've got you covered.</p>
